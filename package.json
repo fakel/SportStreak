@@ -1,0 +1,28 @@
+{
+  "name": "sportstreak",
+  "version": "1.0.0",
+  "description": "A Smart Contract based streak prediction game",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "openzeppelin-solidity": "^2.4.0",
+    "solc": "^0.5.13",
+    "solium": "^1.2.5"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fakel/SportStreak.git"
+  },
+  "author": "Fares A. Akel C.",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/fakel/SportStreak/issues"
+  },
+  "homepage": "https://github.com/fakel/SportStreak#readme"
+}

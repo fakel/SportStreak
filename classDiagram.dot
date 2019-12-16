@@ -1,0 +1,21 @@
+
+digraph UmlClassDiagram {
+rankdir=BT
+color=black
+arrowhead=open
+node [shape=record, style=filled, fillcolor=gray95]
+subgraph  graph_0 {
+label="contracts"
+0 [label="{Migrations| Public:\l\ \ \ owner: address\l\ \ \ last_completed_migration: uint\l| Public:\l\ \ \ \ \<\<modifier\>\> restricted()\l\ \ \ \ constructor()\l\ \ \ \ setCompleted(completed: uint)\l\ \ \ \ upgrade(new_address: address)\l}"]
+1 [label="{GameAdminRole| Private:\l\ \ \ _admins: Roles.Role\l\ \ \ _adminLevel: mapping\(address=\>uint\)\l| Internal:\l\ \ \ \ _addGameAdmin(account: address, level: uint)\l\ \ \ \ _changeGameAdmin(account: address, level: uint)\l\ \ \ \ _removeGameAdmin(account: address)\lPublic:\l\ \ \ \ \<\<event\>\> GameAdminAdded(account: address, level: uint)\l\ \ \ \ \<\<event\>\> GameAdminRemoved(account: address)\l\ \ \ \ \<\<event\>\> GameAdminChanged(account: address, level: uint)\l\ \ \ \ \<\<modifier\>\> onlyGameAdmin(level: uint)\l\ \ \ \ constructor()\l\ \ \ \ isGameAdmin(account: address, level: uint): bool\l\ \ \ \ addAdmin(account: address, level: uint)\l\ \ \ \ changeAdmin(account: address, level: uint)\l\ \ \ \ renounceGameAdmin()\l}"]
+2 [label="{SportStreak| Public:\l\ \ \ monthList: uint\l\ \ \ feesWallet: address\l\ \ \ monthData: mapping\(uint=\>monthListInfo\)\l\ \ \ dayGames: mapping\(uint=\>mapping\(uint=\>uint\)\)\l\ \ \ gameData: mapping\(uint=\>mapping\(uint=\>mapping\(uint=\>gameInfo\)\)\)\l\ \ \ userData: mapping\(uint=\>mapping\(address=\>monthListStats\)\)\l\ \ \ predictions: mapping\(uint=\>mapping\(uint=\>mapping\(uint=\>mapping\(address=\>bool\)\)\)\)\l| Private:\l\ \ \ \ checkHighestStreak(_monthList: uint, _player: address)\lPublic:\l\ \ \ \ \<\<payable\>\> bet(_monthList: uint, _dayList: uint, _gameID: uint, _prediction: bool)\l\ \ \ \ \<\<event\>\> MonthListCreated(monthList: uint, pool: uint, fee: uint, entryPayment: uint)\l\ \ \ \ \<\<event\>\> MonthListUpdated(monthList: uint, _days: uint, games: uint, pool: uint, fee: uint, entryPayment: uint, highestStreak: uint, highestStreakOwner: address)\l\ \ \ \ \<\<event\>\> DayListCreated(_monthListID: uint, _dayListID: uint)\l\ \ \ \ \<\<event\>\> GameIncluded(_monthListID: uint, _dayListID: uint, _description: string, _validFrom: uint, _openUntil: uint, _status: uint8)\l\ \ \ \ \<\<event\>\> DaylistUpdated(_monthListID: uint, _dayListID: uint, _gameID: uint)\l\ \ \ \ \<\<event\>\> FeesWalletUpdated(_newWallet: address)\l\ \ \ \ \<\<event\>\> UserBet(_user: address, _monthList: uint, _dayList: uint, _gameID: uint, _prediction: bool)\l\ \ \ \ \<\<event\>\> UserCancelBet(_user: address, _monthList: uint, _dayList: uint, _gameID: uint)\l\ \ \ \ constructor()\l\ \ \ \ cancelBet(_monthList: uint, _dayList: uint, _gameID: uint)\l\ \ \ \ closeBet(_monthList: uint, _dayList: uint, _gameID: uint)\l\ \ \ \ openMonthList(_pool: uint, _fee: uint, _entryPayment: uint)\l\ \ \ \ addDayList(_monthListID: uint)\l\ \ \ \ addGameToDayList(_monthListID: uint, _dayListID: uint, _description: string, _validFrom: uint, _openUntil: uint, _status: uint8)\l\ \ \ \ setFeesWallet(_newWallet: address)\l\ \ \ \ retrieveStuckTokens(_tokenAddress: IERC20)\l}"]
+"2struct0" [label="{\<\<struct\>\>\nmonthListInfo|_days: uint\lgames: uint\lpool: uint\lfee: uint\lentryPayment: uint\lhighestStreak: uint\lhighestStreakOwner: address\l}"]
+"2struct0" -> 2 [arrowhead=diamond, weight=3]
+"2struct1" [label="{\<\<struct\>\>\nmonthListStats|lock: bool\luserGame: uint\luserDay: uint\luserMonth: uint\lentryPaid: bool\lwins: uint\lfails: uint\lcurrentStreak: uint\llongestStreak: uint\llongestStreakTime: uint\l}"]
+"2struct1" -> 2 [arrowhead=diamond, weight=3]
+"2struct2" [label="{\<\<struct\>\>\ngameInfo|description: string\lvalidFrom: uint\lopenUntil: uint\lstatus: uint8\l}"]
+"2struct2" -> 2 [arrowhead=diamond, weight=3]
+}
+0 -> 0 [style=dashed, ]
+2 -> 1 [arrowhead=empty, arrowsize=3, weight=4, ]
+}
