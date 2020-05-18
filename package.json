@@ -8,8 +8,8 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "openzeppelin-solidity": "^2.4.0",
-    "solc": "^0.5.13",
+    "openzeppelin-solidity": "^3.0.1",
+    "solc": "^0.6.8",
     "solium": "^1.2.5"
   },
   "scripts": {
