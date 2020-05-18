@@ -1,4 +1,4 @@
-pragma solidity 0.5.13;
+pragma solidity ^0.6;
 //https://github.com/OpenZeppelin/
 import "openzeppelin-solidity/contracts/GSN/Context.sol";
 import "openzeppelin-solidity/contracts/access/Roles.sol";
